@@ -1,0 +1,7 @@
+<div class="myTodo">
+  <span [ngClass]="{'strikedText':task.done}">{{ task.label }}</span>
+  <div id="myButtons">
+    <i class="far" (click)="changeState()" [ngClass]="{'fa-square':!task.done,'fa-check-square':task.done}"></i>
+    <i (click)="doAction('delete')" class="fas fa-trash"></i>
+  </div>
+</div>

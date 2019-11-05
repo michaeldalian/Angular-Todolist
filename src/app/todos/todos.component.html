@@ -1,0 +1,13 @@
+<main>
+  <div id="myForm">
+    <label for="idNewTodo"  class="lead">My task</label><br>
+    <input type="text" id="idNewTodo" [(ngModel)]="newTodo.label"><br>
+    <button (click)="addTask()" class="btn btn-primary">Add</button>
+  </div>
+
+  <div id="myList">
+    <!-- <article *ngFor="let task of arrTodolist">{{ task.label }}</article> -->
+    <!-- le component todos écoute l'eventEmitter du bouton de l'élément todo -->
+    <app-todo *ngFor="let element of arrTodolist" [task]="element" (eventAction)="modification($event, element)"></app-todo>
+  </div>
+</main>
